@@ -34,14 +34,12 @@ function checkGuess(e) {
     lowOrHi.textContent = `${userGuess}보다 더 낮은 숫자입니다.`;
     guessField.value = '';
     lastResult.textContent = '';
-    guessLog.textContent += `${userGuess}>?
-    `;
+    guessLog.textContent += `${userGuess}>?`;
   } else if (userGuess < randomNumber) {
     lowOrHi.textContent = `${userGuess}보다 더 높은 숫자입니다.`;
     guessField.value = '';
     lastResult.textContent = '';
-    guessLog.textContent += `${userGuess}<?
-    `;
+    guessLog.textContent += `${userGuess}<?`;
   }
 
   guessCount++;
