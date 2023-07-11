@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>숫자 추측게임</title>
     <style>
-      body{
+      body {
         width: 50%;
         max-width: 800px;
         min-width: 480px;
@@ -15,7 +15,6 @@
       .form input {
         width: 200px;
       }
-
     </style>
   </head>
   <body>
@@ -25,8 +24,8 @@
 
     <form action="">
       <label for="guessField">추측 숫자를 입력하세요.</label>
-      <input type="text" id="guessField" />
-      <input type="submit" value="submit" />
+      <input type="text" id="guessField" class="guessField" />
+      <input type="submit" value="submit" class="guessSubmit" />
     </form>
 
     <!-- 결과 창 -->
@@ -35,5 +34,38 @@
       <p class="lastResult"></p>
       <p class="lowOrHi"></p>
     </div>
+
+    <script>
+      // q1. 1-100까지 랜덤한 숫자 (정스를 반환하는 변수) randomNumber를 선언하고 초기화하세요Math.random
+      let num = 100;
+      let randomNumber = Math.floor(Math.random() * num) + 1;
+      // 2. DOM 요소 5가지를 선택해서 변수로 선언해주세요
+      const guesses = document.querySelector('.guesses');
+      const lastResult = document.querySelector('.lastResult');
+      const lowOrHi = document.querySelector('.lowOrHi');
+      const guessSubmit = document.querySelector('.guessSubmit');
+      const guessField = document.querySelector('.guessField');
+      // 3. 변수 2가지를 선언해주세요
+      const guessCount = 1;
+      let restButton;
+
+      // 플레이어가 켜져 있는 턴 번호를 기록합니다. 1에서 시작하십시오.
+      //       플레이어에게 숫자가 무엇인지 추측할 수 있는 방법을 제공하십시오.
+      // 추측이 제출되면 사용자가 이전 추측을 볼 수 있도록 먼저 어딘가에 기록합니다.
+      // 다음으로 올바른 번호인지 확인하십시오.
+      // 올바른 경우:
+      // 축하 메시지를 표시합니다.
+      // 플레이어가 더 많은 추측을 입력할 수 없도록 합니다(이렇게 하면 게임이 엉망이 됩니다).
+      // 플레이어가 게임을 다시 시작할 수 있도록 하는 디스플레이 컨트롤.
+      // 그것이 틀렸고 플레이어가 왼쪽 턴을 가졌다면:
+      // 플레이어에게 자신이 틀렸으며 추측이 너무 높거나 낮은지 알려줍니다.
+      // 그들이 다른 추측을 입력하도록 허용하십시오.
+      // 턴 번호를 1씩 증가시킵니다.
+      // 틀렸고 플레이어에게 남은 턴이 없다면:
+      // 플레이어에게 게임이 끝났음을 알립니다.
+      // 플레이어가 더 많은 추측을 입력할 수 없도록 합니다(이렇게 하면 게임이 엉망이 됩니다).
+      // 플레이어가 게임을 다시 시작할 수 있도록 하는 디스플레이 컨트롤.
+      // 게임이 다시 시작되면 게임 로직과 UI가 완전히 재설정되었는지 확인한 다음 1단계로 돌아갑니다.
+    </script>
   </body>
 </html>
