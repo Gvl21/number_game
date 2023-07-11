@@ -20,7 +20,6 @@ function checkGuess(e) {
   if (userGuess <= 0 || userGuess > 100) {
     lastResult.textContent = '잘못된 숫자를 기입하셨어요!';
     guessCount--;
-    guessField.value = '';
   } else if (userGuess === randomNumber) {
     lastResult.textContent = `축하합니다! ${guessCount}번 만에 맞추셨어요.`;
     lowOrHi.textContent = '';
@@ -32,20 +31,19 @@ function checkGuess(e) {
     setGameOver();
   } else if (userGuess > randomNumber) {
     lowOrHi.textContent = `${userGuess}보다 더 낮은 숫자입니다.`;
-    guessField.value = '';
+
     lastResult.textContent = '';
-    guessLog.textContent += `${userGuess}>?
-    `;
+    guessLog.textContent += `${userGuess}>?`;
   } else if (userGuess < randomNumber) {
     lowOrHi.textContent = `${userGuess}보다 더 높은 숫자입니다.`;
-    guessField.value = '';
+
     lastResult.textContent = '';
-    guessLog.textContent += `${userGuess}<?
-    `;
+    guessLog.textContent += `${userGuess}<?`;
   }
 
   guessCount++;
   guessField.focus();
+  guessField.value = '';
 }
 
 function setGameOver() {
